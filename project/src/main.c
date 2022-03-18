@@ -1,10 +1,13 @@
-#include "utils.h"
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
-#define ERR_ARGS_COUNT (-1)
-#define ERR_WRONG_FLG (-2)
+#include "utils.h"
+#include "isprime.h"
+#include "recursion.h"
+
+#define ERR_ARGS_COUNT -1
+#define ERR_WRONG_FLG  -2
 
 #define TST_FOO_FIX     1
 #define TST_FOO_IMPL    2
@@ -16,37 +19,37 @@ int main(int argc, const char** argv) {
         return ERR_ARGS_COUNT;
     }
 
-    int Test_case = atoi(argv[1]);
+    char *end;
+    int Test_case = strtol(argv[1], &end, 10);
     const char* data;
     data = argv[2];
 
     switch (Test_case) {
         case TST_FOO_FIX: {
-            int to = atoi(data);
+            int to = strtol(data, &end, 10);
             size_t ticks_count = timer_from(to);
             printf("%zu\n", ticks_count);
             break;
         }
         case TST_FOO_IMPL: {
             if (argc == 4) {
-            int base = atoi(data);
-            int pow =  atoi(argv[3]);
-            int res = custom_pow(base, pow);
+                int base = strtol(data, &end, 10);
+                int pow =  strtol(argv[3], &end, 10);
+                int res = custom_pow(base, pow);
 
-            printf("%i\n", res);
+                printf("%i\n", res);
             } else {
                 return ERR_ARGS_COUNT;
             }
             break;
         }
         case TST_MOD_IMPL: {
-        int num = atoi(data);
-        printf("%d\n", is_prime(num));
+            int num = strtol(data, &end, 10);
+            printf("%d\n", is_prime(num));
         }
-        break;
+            break;
         case TST_REC_IMPL: {
-            int n = atoi(data);
-            // scanf("%i", &n);
+            int n = strtol(data, &end, 10);
             int count = 1;
             rec(count, n);
             break;
