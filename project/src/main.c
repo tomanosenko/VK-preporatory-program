@@ -21,19 +21,17 @@ int main(int argc, const char** argv) {
     }
 
     char *end = NULL;
-    int Test_case = strtol(argv[1], &end, 0);
+    int test_case = strtol(argv[1], &end, 0);
 
     if (*end != '\0') {
         return ERR_STRTOL;
     }
 
-    const char* data;
-    data = argv[2];
+    const char* data = argv[2];
 
-    switch (Test_case) {
+    switch (test_case) {
         case TST_FOO_FIX: {
             int to = strtol(data, &end, 0);
-
             if (*end != '\0') {
                 return ERR_STRTOL;
             }
@@ -84,3 +82,4 @@ int main(int argc, const char** argv) {
         }
     }
 }
+
