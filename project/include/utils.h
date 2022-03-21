@@ -9,6 +9,6 @@ int custom_pow(int base, int power);
 
 int is_prime(int num);
 
-int rec(int count, int n);
+void rec(int n);
 
 #endif  // PROJECT_INCLUDE_UTILS_H_

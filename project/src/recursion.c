@@ -1,14 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int rec(int count, int n) {
-  printf("%i", count);
-  if (abs(count) >= abs(n))
-    return n;
-  printf(" ");
-  if (n > 0)
-    return rec(count + 1, n);
-  else
-    return rec(count - 1, n);
+void rec(int n) {
+  if (n == 1)
+    printf("%d", n);
+  if (n > 1) {
+    rec(n - 1);
+    printf(" ");
+    printf("%d", n);
+  }
+  if (n < 1) {
+    rec(n + 1);
+    printf(" ");
+    printf("%d", n);
+  }
 }

@@ -38,8 +38,7 @@ int main(int argc, const char** argv) {
                 return ERR_STRTOL;
             }
 
-            size_t ticks_count = timer_from(to);
-            printf("%zu\n", ticks_count);
+            printf("%zu\n", timer_from(to));
             break;
         }
         case TST_FOO_IMPL: {
@@ -76,8 +75,7 @@ int main(int argc, const char** argv) {
                 return ERR_STRTOL;
             }
 
-            int count = 1;
-            rec(count, n);
+            rec(n);
             break;
         }
 
