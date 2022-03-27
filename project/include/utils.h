@@ -13,7 +13,7 @@ struct masterRecord {
     double credit_limit; 
     double cash_payments;};
 
-typedef struct masterRecord Date;
+typedef struct masterRecord Data;
 
 #define origin "record.dat"
 #define filename "transaction.dat"
