@@ -7,7 +7,9 @@ enum ACTIONS { ENTER_DATA_ACTION = 1, ENTER_DATA_CLIENT, UPDATE_BASE, EXIT = -1 
 
 	int main(void) {
 		int choice = 0;	
-		void masterWrite(FILE *ofPTR, Data Client )  ,transactionWrite(FILE *ofPTR, Data transfer     )   ,      blackRecord(FILE *ofPTR, FILE  *ofPTR_2 , FILE *blackrecord , Data	client_data  ,   Data transfer )                    ;
+		void masterWrite(FILE *ofPTR, Data Client);
+		void transaction_write(FILE *ofPTR, Data transfer);
+		void blackRecord(FILE *ofPTR, FILE  *ofPTR_2 , FILE *blackrecord , Data	client_data  ,   Data transfer )                    ;
 		FILE *Ptr, *Ptr_2 , *Ptr_3  ;
 	  	Data client_data,  transfer  ;
 	printf("%s", "please enter action\n1 enter data client:\n2 enter data transaction:\n3 update base\n" );
