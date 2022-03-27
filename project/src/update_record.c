@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "file_utils.h"
 
-void update_record( FILE *ofPTR, FILE  *ofPTR_2 , FILE *blackrecord, Data	 client_data, Data transfer ) {
+void update_record(FILE *ofPTR, FILE  *ofPTR_2, FILE *blackrecord, Data client_data, Data transfer) {
 	while (
         fscanf( ofPTR, "%d%s%s%s%s%lf%lf%lf", 
                 &client_data.number,  
@@ -26,4 +27,5 @@ void update_record( FILE *ofPTR, FILE  *ofPTR_2 , FILE *blackrecord, Data	 clien
                 	client_data.credit_limit,  
                     client_data.cash_payments) ;
 			rewind(	ofPTR_2 );
-		}
+    }
+}

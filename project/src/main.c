@@ -1,9 +1,10 @@
 
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "utils.h"
 #include "file_utils.h"
 
-enum ACTIONS { ENTER_DATA_ACTION = 1, ENTER_DATA_CLIENT, UPDATE_BASE, EXIT = -1 };
+enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, EXIT = -1 };
 
 int main(void) {
 	int choice = 0;	
@@ -15,7 +16,7 @@ int main(void) {
 	printf("%s", "please enter action\n1 enter data client:\n2 enter data transaction:\n3 update base\n");
 		while (scanf("%d", &choice) != EXIT) {
 			switch(choice) {
-				case ENTER_DATA_ACTION:
+				case ENTER_DATA_CLIENT:
 					Ptr = fopen(origin, "r+"); 
 					if(Ptr == NULL) {
 						puts("Not acess");	
@@ -24,7 +25,7 @@ int main(void) {
 						fclose(Ptr);
 					}
 					break;
-				case ENTER_DATA_CLIENT:
+				case ENTER_DATA_TRANSACTION:
 					Ptr = fopen(origin, "r+");
 						if(Ptr == NULL) {
 							puts("Not acess");	
@@ -37,10 +38,10 @@ int main(void) {
 					//Ptr = fopen(origin, "r");
 					Ptr_2 = fopen(filename, "r");
 					Ptr_3 = fopen(b_record, "w");	
-					if(	Ptr == NULL || Ptr_2 == NULL || blackRecord == NULL) {
+					if(	Ptr == NULL || Ptr_2 == NULL || Ptr_3 == NULL) {
 						puts("exit");
 					} else {
-						blackRecord(Ptr, Ptr_2 , Ptr_3, client_data, transfer);
+						update_record(Ptr_2 , Ptr_3, client_data, transfer);
 						free(Ptr);
 						fclose(Ptr);
 						fclose(Ptr_2);	

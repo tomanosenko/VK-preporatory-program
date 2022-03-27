@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "file_utils.h"
 
 void masterWrite(FILE *ofPTR, Data Client) {
 	printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\n",  
