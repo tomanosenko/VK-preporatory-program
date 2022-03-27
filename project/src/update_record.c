@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void blackRecord( FILE *ofPTR, FILE  *ofPTR_2 , FILE *blackrecord, Data	 client_data, Data transfer ) {
+void update_record( FILE *ofPTR, FILE  *ofPTR_2 , FILE *blackrecord, Data	 client_data, Data transfer ) {
 	while (
         fscanf( ofPTR, "%d%s%s%s%s%lf%lf%lf", 
                 &client_data.number,  
