@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void update_record(FILE *ofPTR, FILE  *ofPTR_2, FILE *blackrecord, Data client_data, Data transfer) {
+void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord, Data client_data, Data transfer) {
 	while (
-        fscanf( ofPTR, "%d%s%s%s%s%lf%lf%lf", 
+        fscanf( ofPTR_1, "%d%s%s%s%s%lf%lf%lf", 
                 &client_data.number,  
                 client_data.name, 
                 client_data.surname,
@@ -17,7 +17,7 @@ void update_record(FILE *ofPTR, FILE  *ofPTR_2, FILE *blackrecord, Data client_d
 						client_data.credit_limit += transfer.cash_payments;
 					} 
 			}
-			fprintf(blackrecord , "%-12d%-11s%-11s%-16s%20s%12.2f%12.2f%12.2f\n",
+			fprintf(updatedrecord , "%-12d%-11s%-11s%-16s%20s%12.2f%12.2f%12.2f\n",
                     client_data.number,
                     client_data.name, 
                     client_data.surname, 

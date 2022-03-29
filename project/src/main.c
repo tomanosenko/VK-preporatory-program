@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "utils.h"
 #include "file_utils.h"
 
@@ -10,7 +11,7 @@ int main(void) {
 	int choice = 0;	
 	void masterWrite(FILE *ofPTR, Data Client);
 	void transaction_write(FILE *ofPTR, Data transfer);
-	void update_record(FILE  *ofPTR_2, FILE *blackrecord, Data client_data, Data transfer)                    ;
+	void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord, Data client_data, Data transfer);                  ;
 	FILE *Ptr, *Ptr_2, *Ptr_3;
 	Data client_data, transfer;
 	printf("%s", "please enter action\n1 enter data client:\n2 enter data transaction:\n3 update base\n");
@@ -26,7 +27,7 @@ int main(void) {
 					}
 					break;
 				case ENTER_DATA_TRANSACTION:
-					Ptr = fopen(origin, "r+");
+					Ptr = fopen(filename, "r+");
 						if(Ptr == NULL) {
 							puts("Not acess");	
 						} else {
@@ -35,16 +36,16 @@ int main(void) {
 						}
 					break;	
 				case UPDATE_BASE:
-					//Ptr = fopen(origin, "r");
+					Ptr = fopen(origin, "r");
 					Ptr_2 = fopen(filename, "r");
 					Ptr_3 = fopen(b_record, "w");	
 					if(	Ptr == NULL || Ptr_2 == NULL || Ptr_3 == NULL) {
 						puts("exit");
 					} else {
-						update_record(Ptr_2 , Ptr_3, client_data, transfer);
+						update_record(Ptr, Ptr_2 , Ptr_3, client_data, transfer);
 						free(Ptr);
 						fclose(Ptr);
-						fclose(Ptr_2);	
+						fclose(Ptr_2);
 						fclose(Ptr_3);
 					}
 					break;
