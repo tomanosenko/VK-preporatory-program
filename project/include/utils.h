@@ -18,6 +18,6 @@ typedef struct masterRecord Data;
 
 #define origin "record.dat"
 #define filename "transaction.dat"
-#define b_record "blackerecord.dat"
+#define b_record "blackrecord.dat"
 
 #endif //UTILS_H_

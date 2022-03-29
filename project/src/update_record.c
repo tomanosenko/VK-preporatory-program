@@ -27,5 +27,6 @@ void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord, Data clie
                 	client_data.credit_limit,  
                     client_data.cash_payments) ;
 			rewind(	ofPTR_2 );
+            rewind(updatedrecord);
     }
 }

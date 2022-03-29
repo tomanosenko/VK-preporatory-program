@@ -38,7 +38,7 @@ int main(void) {
 				case UPDATE_BASE:
 					Ptr = fopen(origin, "r");
 					Ptr_2 = fopen(filename, "r");
-					Ptr_3 = fopen(b_record, "w");	
+					Ptr_3 = fopen(b_record, "r+");	
 					if(	Ptr == NULL || Ptr_2 == NULL || Ptr_3 == NULL) {
 						puts("exit");
 					} else {
