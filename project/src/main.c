@@ -8,7 +8,7 @@
 enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, EXIT = -1 };
 
 int main(void) {
-	int choice = 0;	
+	int choice = 0;
 	void masterWrite(FILE *ofPtr);
 	void transaction_write(FILE *ofPtr);
 	void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord);                  ;
