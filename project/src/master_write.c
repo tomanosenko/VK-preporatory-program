@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void masterWrite(FILE *ofPTR, Data Client) {
+void masterWrite(FILE *ofPTR) {
+	Data Client;
 	printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\n",  
 		"1 Number account: ",
 		"2 Client name: ",
@@ -12,7 +13,7 @@ void masterWrite(FILE *ofPTR, Data Client) {
 		"7 Client credit limit: ",
 		"8 Client cash payments: " );
 	while( 
-        scanf("%d%s%s%s%s%lf%lf%lf",
+        scanf("%d%10s%10s%10s%10s%lf%lf%lf",
             &Client.number, 
             Client.name, 
             Client.surname, 

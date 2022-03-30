@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord, Data client_data, Data transfer) {
+void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord) {
+    Data client_data, transfer;
 	while (
-        fscanf( ofPTR_1, "%d%s%s%s%s%lf%lf%lf", 
+        fscanf( ofPTR_1, "%d%10s%10s%10s%10s%lf%lf%lf", 
                 &client_data.number,  
                 client_data.name, 
                 client_data.surname,

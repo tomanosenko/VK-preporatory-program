@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include"utils.h"
 
-void transactionWrite(FILE *ofPtr, Data transfer) {
+void transaction_write(FILE *ofPtr) {
+	Data transfer;
 	printf("%s\n%s\n",
 		"1 Number account: ",
 		"2 Client cash payments: ");
