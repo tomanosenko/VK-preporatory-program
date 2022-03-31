@@ -4,6 +4,7 @@
     #include <sys/stat.h>
     #include <fcntl.h>
     #include "main_module.h"
+    #include "utils.h"
 
     void test_write_to_file() {
     const char *somefile = "Test_config.dat.gold";
@@ -21,22 +22,22 @@
     &got_data.credit_limit,
     &got_data.cash_payments);
     write_to_file(filename1, &got_data);
-    read_from_file(filename, &expected_data);
+    read_from_file(somefile, &expected_data);
     read_from_file(filename1, &got_data);
     if (&expected_data == &got_data)
     printf("%s", "Succeed\n");
     printf("%s", "Error\n");
     }
-    void write_to_file(const char *filename, Data *data) {
-    int f_d = open(filename, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+    void write_to_file(const char *somefile, Data *data) {
+    int f_d = open(somefile, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
     if (f_d == -1) {
     perror("error");
     }
     write(f_d, data, sizeof(data));
     close(f_d);
     }
-    void read_from_file(const char *filename, Data *data) {
-    int f_d = open(filename, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+    void read_from_file(const char *somefile, Data *data) {
+    int f_d = open(somefile, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
     if (f_d == -1) {
     perror("error");
     }

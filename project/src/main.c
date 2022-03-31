@@ -45,9 +45,9 @@ int main(void) {
                         fclose(Ptr_3);
                     }
                     break;
-					case TESTING:
-					test_write_to_file();
-					break;
+                    case TESTING:
+                    test_write_to_file();
+                    break;
                     default:
                         puts("error");
                     break;
