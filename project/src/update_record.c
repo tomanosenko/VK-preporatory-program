@@ -4,7 +4,7 @@
 void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord) {
     Data client_data, transfer;
     while (
-        fscanf( ofPTR_1, "%d%10s%10s%10s%10s%lf%lf%lf",
+        fscanf(ofPTR_1, "%d%10s%10s%10s%10s%lf%lf%lf",
                 &client_data.number,
                 client_data.name,
                 client_data.surname,
@@ -13,7 +13,7 @@ void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord) {
                 &client_data.indebtedness,
                 &client_data.credit_limit,
                 &client_data.cash_payments) != -1 ) {
-            while (fscanf(ofPTR_2 , "%d %lf",  &transfer.number , &transfer.cash_payments) !=  -1 ) {
+            while (fscanf(ofPTR_2 , "%d %lf",  &transfer.number , &transfer.cash_payments) !=  -1) {
                 if ((client_data.number == transfer.number) && (transfer.cash_payments) != 0) {
                     client_data.credit_limit += transfer.cash_payments;
                 }

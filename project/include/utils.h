@@ -1,11 +1,11 @@
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef PROJECT_INCLUDE_UTILS_H_
+#define PROJECT_INCLUDE_UTILS_H_
 #include <unistd.h>
 
 #include <stdio.h>
 
 struct masterRecord {
-    int number; 
+    int number;
     char name[20];
     char surname[20];
     char addres[30];
@@ -13,11 +13,11 @@ struct masterRecord {
     double indebtedness;
     double credit_limit;
     double cash_payments;};
-    
+
 typedef struct masterRecord Data;
 
 #define origin "record.dat"
 #define filename "transaction.dat"
 #define b_record "blackrecord.dat"
 
-#endif //UTILS_H_
+#endif  //  PROJECT_INCLUDE_UTILS_H_"
