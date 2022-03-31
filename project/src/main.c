@@ -45,7 +45,6 @@ int main(void) {
 						fclose(Ptr);
 						fclose(Ptr_2);
 						fclose(Ptr_3);
-						free(Ptr);
 					}
 					break;
 					default:
