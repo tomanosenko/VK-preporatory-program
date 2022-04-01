@@ -26,6 +26,7 @@ void test_write_to_file() {
         &got_data.cash_payments);
         write_to_file(Test, got_data);
         fclose(Gold);
+        rewind(Test);
         read_from_file(Test, expected_data);
         fclose(Test);
     }
