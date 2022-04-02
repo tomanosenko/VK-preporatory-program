@@ -10,39 +10,39 @@ enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, TESTI
 
 int main(void) {
     int choice = 0;
-    FILE *Ptr, *Ptr_2, *Ptr_3;
+    FILE *p_inf, *transac, *n_transac;
     printf("%s", "please enter action\n1 enter data client:\n2 enter data transaction:\n3 update base\n");
         while (scanf("%d", &choice) != EXIT) {
             switch (choice) {
                 case ENTER_DATA_CLIENT:
-                    Ptr = fopen(origin, "r+");
-                    if (Ptr == NULL) {
+                    p_inf = fopen(origin, "r+");
+                    if (p_inf == NULL) {
                         puts("Not acess");
                     } else {
-                    pesonal_data_write(Ptr);
-                    fclose(Ptr);
+                    pesonal_data_write(p_inf);
+                    fclose(p_inf);
                     }
                     break;
                 case ENTER_DATA_TRANSACTION:
-                    Ptr = fopen(filename, "r+");
-                    if (Ptr == NULL) {
+                    p_inf = fopen(filename, "r+");
+                    if (p_inf == NULL) {
                         puts("Not acess");
                     } else {
-                        transaction_write(Ptr);
-                    fclose(Ptr);
+                        transaction_write(p_inf);
+                    fclose(p_inf);
                     }
                     break;
                 case UPDATE_BASE:
-                    Ptr = fopen(origin, "r");
-                    Ptr_2 = fopen(filename, "r");
-                    Ptr_3 = fopen(b_record, "a+");
-                    if (Ptr == NULL || Ptr_2 == NULL || Ptr_3 == NULL) {
+                    p_inf = fopen(origin, "r");
+                    transac = fopen(filename, "r");
+                    n_transac = fopen(b_record, "a+");
+                    if (p_inf == NULL || transac == NULL || n_transac == NULL) {
                         puts("exit");
                     } else {
-                        update_transaction_data(Ptr, Ptr_2 , Ptr_3);
-                        fclose(Ptr);
-                        fclose(Ptr_2);
-                        fclose(Ptr_3);
+                        update_transaction_data(p_inf, transac, n_transac);
+                        fclose(p_inf);
+                        fclose(transac);
+                        fclose(n_transac);
                     }
                     break;
                     case TESTING:
@@ -56,4 +56,5 @@ int main(void) {
     }
     return 0;
 }
+
 

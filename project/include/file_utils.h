@@ -4,8 +4,8 @@
 
 #include "utils.h"
 
-void pesonal_data_write(FILE *ofPTR);
-void transaction_write(FILE *ofPtr);
-void update_transaction_data(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord);
+void pesonal_data_write(FILE *of_p_inf);
+void transaction_write(FILE *of_p_inf);
+void update_transaction_data(FILE *of_p_inf, FILE  *of_transac, FILE *of_n_transac);
 
 #endif  // PROJECT_INCLUDE_FILE_UTILS_H_

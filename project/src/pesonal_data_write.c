@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void esonal_data_write(FILE *ofPTR) {
+void pesonal_data_write(FILE *of_p_inf) {
     Data Client;
     printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\n",
         "1 Number account: ",
@@ -22,7 +22,7 @@ void esonal_data_write(FILE *ofPTR) {
             &Client.indebtedness,
             &Client.credit_limit,
             &Client.cash_payments) != -1) {
-                fprintf(ofPTR, "%-12d%-11s%-11s%-16s%20s%12.2f%12.2f%12.2f\n",
+                fprintf(of_p_inf, "%-12d%-11s%-11s%-16s%20s%12.2f%12.2f%12.2f\n",
                     Client.number,
                     Client.name,
                     Client.surname,

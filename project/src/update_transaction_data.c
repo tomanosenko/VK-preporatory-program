@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void update_transaction_data(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord) {
+void update_transaction_data(FILE *of_p_inf, FILE  *of_transac, FILE *of_n_transac) {
     Data client_data, transfer;
     while (
-        fscanf(ofPTR_1, "%d%10s%10s%10s%10s%lf%lf%lf",
+        fscanf(of_p_inf, "%d%10s%10s%10s%10s%lf%lf%lf",
                 &client_data.number,
                 client_data.name,
                 client_data.surname,
@@ -13,12 +13,12 @@ void update_transaction_data(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord)
                 &client_data.indebtedness,
                 &client_data.credit_limit,
                 &client_data.cash_payments) != -1 ) {
-            while (fscanf(ofPTR_2 , "%d %lf",  &transfer.number , &transfer.cash_payments) !=  -1) {
+            while (fscanf(of_transac, "%d %lf",  &transfer.number , &transfer.cash_payments) !=  -1) {
                 if ((client_data.number == transfer.number) && (transfer.cash_payments) != 0) {
                     client_data.credit_limit += transfer.cash_payments;
                 }
             }
-            fprintf(updatedrecord , "%-12d%-11s%-11s%-16s%20s%12.2f%12.2f%12.2f\n",
+            fprintf(of_n_transac, "%-12d%-11s%-11s%-16s%20s%12.2f%12.2f%12.2f\n",
                     client_data.number,
                     client_data.name,
                     client_data.surname,
@@ -27,7 +27,7 @@ void update_transaction_data(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord)
                     client_data.indebtedness,
                     client_data.credit_limit,
                     client_data.cash_payments);
-            rewind(ofPTR_2);
-            rewind(updatedrecord);
+            rewind(of_transac);
+            rewind(of_n_transac);
     }
 }
