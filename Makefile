@@ -2,7 +2,7 @@ TARGET = ./main.out
 HDRS_DIR = project/include
 
 SRCS = project/src/main.c \
-	   project/src/pesonal_data_write.c \
+	   project/src/personal_data_write.c \
 	   project/src/transaction_write.c \
 	   project/src/update_transaction_data.c \
 	   project/src/test.c

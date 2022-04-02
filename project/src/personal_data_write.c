@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void pesonal_data_write(FILE *of_p_inf) {
+void personal_data_write(FILE *of_p_inf) {
     Data Client;
     printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\n",
         "1 Number account: ",

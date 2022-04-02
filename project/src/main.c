@@ -19,7 +19,7 @@ int main(void) {
                     if (p_inf == NULL) {
                         puts("Not acess");
                     } else {
-                    pesonal_data_write(p_inf);
+                    personal_data_write(p_inf);
                     fclose(p_inf);
                     }
                     break;
