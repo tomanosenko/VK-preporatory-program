@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "file_utils.h"
 
-void update_record(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord) {
+void update_transaction_data(FILE *ofPTR_1, FILE  *ofPTR_2, FILE *updatedrecord) {
     Data client_data, transfer;
     while (
         fscanf(ofPTR_1, "%d%10s%10s%10s%10s%lf%lf%lf",

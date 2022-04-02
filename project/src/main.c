@@ -19,7 +19,7 @@ int main(void) {
                     if (Ptr == NULL) {
                         puts("Not acess");
                     } else {
-                    masterWrite(Ptr);
+                    pesonal_data_write(Ptr);
                     fclose(Ptr);
                     }
                     break;
@@ -39,7 +39,7 @@ int main(void) {
                     if (Ptr == NULL || Ptr_2 == NULL || Ptr_3 == NULL) {
                         puts("exit");
                     } else {
-                        update_record(Ptr, Ptr_2 , Ptr_3);
+                        update_transaction_data(Ptr, Ptr_2 , Ptr_3);
                         fclose(Ptr);
                         fclose(Ptr_2);
                         fclose(Ptr_3);
