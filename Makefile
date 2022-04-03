@@ -5,7 +5,7 @@ SRCS = project/src/main.c \
 	   project/src/personal_data_write.c \
 	   project/src/transaction_write.c \
 	   project/src/update_transaction_data.c \
-	   project/src/test.c
+	   project/src/test.c 
 
 .PHONY: all build rebuild check test memtest clean
 

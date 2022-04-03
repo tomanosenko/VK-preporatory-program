@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-#define origin "record.dat"
-#define filename "transaction.dat"
-#define b_record "blackrecord.dat"
+#define p_information "personal_information.dat"
+#define transaction "transaction.dat"
+#define n_transaction "new_transaction.dat"
 
 #define SIZE_NAME 20
 #define SIZE_SURNAME 20

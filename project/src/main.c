@@ -6,7 +6,9 @@
 #include "file_utils.h"
 #include "main_module.h"
 
-enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, TESTING, EXIT = -1 };
+#define ERROR "Not access"
+
+enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, TESTING, EXIT = -1};
 
 int main(void) {
     int choice = 0;
@@ -15,27 +17,27 @@ int main(void) {
         while (scanf("%d", &choice) != EXIT) {
             switch (choice) {
                 case ENTER_DATA_CLIENT:
-                    p_inf = fopen(origin, "r+");
+                    p_inf = fopen(p_information, "r+");
                     if (p_inf == NULL) {
-                        puts("Not acess");
+                        fprintf(stderr, ERROR);
                     } else {
                     personal_data_write(p_inf);
                     fclose(p_inf);
                     }
                     break;
                 case ENTER_DATA_TRANSACTION:
-                    p_inf = fopen(filename, "r+");
+                    p_inf = fopen(transaction, "r+");
                     if (p_inf == NULL) {
-                        puts("Not acess");
+                        fprintf(stderr, ERROR);
                     } else {
-                        transaction_write(p_inf);
+                    transaction_write(p_inf);
                     fclose(p_inf);
                     }
                     break;
                 case UPDATE_BASE:
-                    p_inf = fopen(origin, "r");
-                    transac = fopen(filename, "r");
-                    n_transac = fopen(b_record, "a+");
+                    p_inf = fopen(p_information, "r");
+                    transac = fopen(transaction, "r");
+                    n_transac = fopen(n_transaction, "a+");
                     if (p_inf == NULL || transac == NULL || n_transac == NULL) {
                         puts("exit");
                     } else {
@@ -45,7 +47,7 @@ int main(void) {
                         fclose(n_transac);
                     }
                     break;
-                    case TESTING:
+                case TESTING:
                     test_write_to_file();
                     break;
                     default:
@@ -56,5 +58,3 @@ int main(void) {
     }
     return 0;
 }
-
-
