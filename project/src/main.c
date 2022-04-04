@@ -4,11 +4,10 @@
 #include <unistd.h>
 #include "utils.h"
 #include "file_utils.h"
-#include "main_module.h"
 
 #define ERROR "Not access"
 
-enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, TESTING, EXIT = -1};
+enum ACTIONS { ENTER_DATA_CLIENT = 1, ENTER_DATA_TRANSACTION, UPDATE_BASE, EXIT = -1};
 
 int main(void) {
     int choice = 0;
@@ -46,9 +45,6 @@ int main(void) {
                         fclose(transac);
                         fclose(n_transac);
                     }
-                    break;
-                case TESTING:
-                    test_write_to_file();
                     break;
                     default:
                         puts("error");
