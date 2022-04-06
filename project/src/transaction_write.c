@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 #include "utils.h"
 
 void transaction_write(FILE *of_p_inf) {

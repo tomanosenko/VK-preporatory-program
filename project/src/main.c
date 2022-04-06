@@ -23,12 +23,12 @@ int main(void) {
                     }
                     break;
                 case ENTER_DATA_TRANSACTION:
-                    p_inf = fopen(transaction, "r+");
-                    if (p_inf == NULL) {
+                    transac = fopen(transaction, "r+");
+                    if (transac == NULL) {
                         fprintf(stderr, ERROR);
                     } else {
-                    transaction_write(p_inf);
-                    fclose(p_inf);
+                    transaction_write(transac);
+                    fclose(transac);
                     }
                     break;
                 case UPDATE_BASE:

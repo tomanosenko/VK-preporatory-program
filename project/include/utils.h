@@ -1,27 +1,15 @@
-#ifndef GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_FILE_UTILS_H_
-#define GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_FILE_UTILS_H_
-#include <unistd.h>
+#ifndef GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H_
+#define GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H_
+
 #include <stdio.h>
+#include "data_struct.h"
 
 #define p_information "record.dat"
 #define transaction "transaction.dat"
 #define n_transaction "blackrecord.dat"
 
-#define SIZE_NAME 20
-#define SIZE_SURNAME 20
-#define SIZE_ADDRES 30
-#define SIZE_TEL_NUMBER 15
+void personal_data_write(FILE *of_p_inf);
+void transaction_write(FILE *of_p_inf);
+void update_transaction_data(FILE *of_p_inf, FILE  *of_transac, FILE *of_n_transac);
 
-struct masterRecord {
-    int number;
-    char name[SIZE_NAME];
-    char surname[SIZE_SURNAME];
-    char addres[SIZE_ADDRES];
-    char tel_number[SIZE_TEL_NUMBER];
-    double indebtedness;
-    double credit_limit;
-    double cash_payments;};
-
-typedef struct masterRecord Data;
-
-#endif  //  GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_FILE_UTILS_H_
+#endif  //  GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H_
