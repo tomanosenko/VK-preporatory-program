@@ -1,12 +1,11 @@
-#ifndef PROJECT_INCLUDE_UTILS_H_
-#define PROJECT_INCLUDE_UTILS_H_
-
+#ifndef GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_FILE_UTILS_H_
+#define GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_FILE_UTILS_H_
 #include <unistd.h>
 #include <stdio.h>
 
-#define p_information "personal_information.dat"
+#define p_information "record.dat"
 #define transaction "transaction.dat"
-#define n_transaction "new_transaction.dat"
+#define n_transaction "blackrecord.dat"
 
 #define SIZE_NAME 20
 #define SIZE_SURNAME 20
@@ -25,4 +24,4 @@ struct masterRecord {
 
 typedef struct masterRecord Data;
 
-#endif  //  PROJECT_INCLUDE_UTILS_H_"
+#endif  //  GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_FILE_UTILS_H_

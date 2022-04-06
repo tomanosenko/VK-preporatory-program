@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include "file_utils.h"
+
+#include "utils.h"
 
 void update_transaction_data(FILE *of_p_inf, FILE  *of_transac, FILE *of_n_transac) {
     Data client_data, transfer;

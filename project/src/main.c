@@ -1,9 +1,7 @@
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "utils.h"
-#include "file_utils.h"
 
 #define ERROR "Not access"
 
