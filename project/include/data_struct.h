@@ -1,6 +1,6 @@
 
-#ifndef GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_DATA_STRUCT_H_
-#define GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_DATA_STRUCT_H_
+#ifndef PROJECT_INCLUDE_DATA_STRUCT_H_
+#define PROJECT_INCLUDE_DATA_STRUCT_H_
 
 #define SIZE_NAME 20
 #define SIZE_SURNAME 20
@@ -18,4 +18,4 @@ typedef struct masterRecord {
     double cash_payments;
     } Data;
 
-#endif  // GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_DATA_STRUCT_H_
+#endif  // PROJECT_INCLUDE_DATA_STRUCT_H_
