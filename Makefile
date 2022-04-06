@@ -10,8 +10,8 @@ SRCS = \
 	   project/src/update_transaction_data.c 
 
 SRCS_TEST = \
-      mytests/src/main_my_test.c \
-      mytests/src/main_test_utils.c \
+      mytests/src/main.c \
+      mytests/src/my_test_utils.c \
 	  mytests/src/is_equal.c
 
 .PHONY: all build rebuild check test memtest clean
