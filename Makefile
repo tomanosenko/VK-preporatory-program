@@ -9,7 +9,9 @@ HDRS = \
 
 SRCS = \
 	   project/src/main.c \
-	   project/src/matrix.c
+	   project/src/matrix.c \
+	   project/src/create_matrix_from_file.c \
+	   project/src/get_rows_cols
 
 # Test
 TST_HDRS = \

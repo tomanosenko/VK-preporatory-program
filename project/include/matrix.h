@@ -1,13 +1,13 @@
+
 #ifndef _MATRIX_H_
 #define _MATRIX_H_
 
 #include <stddef.h>
 
-
 typedef struct Matrix {
-    int num_row;
-    int num_col;
-    double value;
+    int num_rows;
+    int num_cols;
+    double* value;
 } Matrix;
 
 // Init/release operations
