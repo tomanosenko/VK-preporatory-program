@@ -1,8 +1,0 @@
-
-#include <stdio.h>
-#include "matrix.h"
-
-Matrix* create_matrix(size_t rows, size_t cols) {
-    scanf(rows, cols);
-    Matrix matrix[rows][cols];
-}
