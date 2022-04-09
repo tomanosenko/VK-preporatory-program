@@ -1,15 +1,16 @@
-#ifndef PROJECT_INCLUDE_UTILS_H_
-#define PROJECT_INCLUDE_UTILS_H_
+#ifndef GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H__
+#define GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H__
 
 #include <stdio.h>
 #include "data_struct.h"
 
-#define p_information "record.dat"
-#define transaction "transaction.dat"
-#define n_transaction "blackrecord.dat"
+#define PERSONAL_INFORMATION "record.dat"
+#define TRANSACTION "transaction.dat"
+#define UPDATED_TRANSACTION "blackrecord.dat"
 
-void personal_data_write(FILE *of_p_inf);
-void transaction_write(FILE *of_p_inf);
-void update_transaction_data(FILE *of_p_inf, FILE  *of_transac, FILE *of_n_transac);
+void personal_data_write(const char *inf);
+void transaction_write(const char *inf);
+void update_transaction_data(const char *record_filename, const char *transaction_filename,
+const char *transact_record_filename);
 
-#endif  //  PROJECT_INCLUDE_UTILS_H_
+#endif  // GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H__
