@@ -1,6 +1,5 @@
-#ifndef GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H__
-#define GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H__
-
+#ifndef PROJECT_INCLUDE_UTILS_H_
+#define PROJECT_INCLUDE_UTILS_H_
 #include <stdio.h>
 #include "data_struct.h"
 
@@ -13,4 +12,4 @@ void transaction_write(const char *inf);
 void update_transaction_data(const char *record_filename, const char *transaction_filename,
 const char *transact_record_filename);
 
-#endif  // GITHUB_GIT_TEST_HW_PROJECT_INCLUDE_UTILS_H__
+#endif  // PROJECT_INCLUDE_UTILS_H_
