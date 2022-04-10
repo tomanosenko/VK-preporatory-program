@@ -14,7 +14,8 @@ SRCS = \
 	   project/src/get_rows_cols.c \
 	   project/src/get_set_elem.c \
 	   project/src/mul_scalar.c \xx_transp.c
-	   project/src/matri
+	   project/src/matrix_transp.c \
+	   project/src/matrix_sum.c
 
 
 
