@@ -9,7 +9,7 @@ Matrix* create_matrix_from_file(const char* path_file){
     if (matrix_data == NULL) {
         perror("Not file exist");
     } else {
-        fscanf(matrix_data, "%llu%llu", matrix->num_rows, matrix->num_cols);
+        fscanf(matrix_data, "%u%u", matrix->num_rows, matrix->num_cols);
         matrix->value = malloc(matrix->num_rows*matrix->num_cols*sizeof(double));
         while (fscanf(matrix_data, "%lf", &matrix->value) != -1) {
             for (int i=0; i < matrix->num_rows; i++) {

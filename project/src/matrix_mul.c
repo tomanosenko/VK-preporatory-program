@@ -7,7 +7,7 @@ Matrix* mul(const Matrix* left, const Matrix* right) {
     size_t *rows_l, *cols_l, *rows_r, *cols_r;
     double *val1, *val2, res, res1;
     if ((check_for_exist(left) == 1) && (check_for_exist(right) == 1)) {
-        if (get_rows(left, rows_l) == get_cols(right, cols_r)) {
+        if (get_rows(left, *rows_l) == get_cols(right, *cols_r)) {
             int k = 0;
             for (int i = 0; i < get_rows(left, rows_l); i++) { 
                 while (k < get_cols(right, cols_r)) {
