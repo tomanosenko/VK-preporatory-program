@@ -11,7 +11,12 @@ SRCS = \
 	   project/src/main.c \
 	   project/src/matrix.c \
 	   project/src/create_matrix_from_file.c \
-	   project/src/get_rows_cols
+	   project/src/get_rows_cols.c \
+	   project/src/get_set_elem.c \
+	   project/src/mul_scalar.c \xx_transp.c
+	   project/src/matri
+
+
 
 # Test
 TST_HDRS = \
