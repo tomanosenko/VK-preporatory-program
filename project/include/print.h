@@ -1,6 +1,6 @@
 
-#ifndef ROJECT_INCLUDE_PRINT_H_
-#define ROJECT_INCLUDE_PRINT_H_
+#ifndef PROJECT_INCLUDE_PRINT_H_
+#define PROJECT_INCLUDE_PRINT_H_
 #include <stdio.h>
 
 void show_options();
