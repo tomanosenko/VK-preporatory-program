@@ -25,7 +25,7 @@ Matrix* mul(const Matrix* left, const Matrix* right) {
             for (int j = 0; get_cols(left, cols_l); j++) {
                 while (k1 < get_rows(right, rows_r)) {
                     res1 = 0;
-                    for (int i = 0; get_rows(left, rows_l); i++) {
+                    for (int i = 0; get_rows(left, *rows_l); i++) {
                         res1 = res1 + get_elem(left, i, j, val1) * get_elem(right, i, j+k1, val2);
                     }
                 set_elem(result, j, k1, res1);
