@@ -3,10 +3,12 @@
 #define _MATRIX_H_
 
 #include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct Matrix {
-    int num_rows;
-    int num_cols;
+    size_t num_rows;
+    size_t num_cols;
     double** value;
 } Matrix;
 
@@ -14,11 +16,11 @@ typedef struct Matrix {
 Matrix* create_matrix_from_file(const char* path_file);
 Matrix* create_matrix(size_t rows, size_t cols);
 void free_matrix(Matrix* matrix);
-int check_for_exist(Matrix *matrix);
+int check_for_exist(const Matrix *matrix);
 
 // Basic operations
-int get_rows(const Matrix* matrix, size_t rows);
-int get_cols(const Matrix* matrix, size_t cols);
+int get_rows(const Matrix* matrix, size_t* rows);
+int get_cols(const Matrix* matrix, size_t* cols);
 int get_elem(const Matrix* matrix, size_t row, size_t col, double* val);
 int set_elem(Matrix* matrix, size_t row, size_t col, double val);
 

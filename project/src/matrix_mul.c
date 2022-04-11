@@ -3,35 +3,43 @@
 #include "matrix.h"
 
 Matrix* mul(const Matrix* left, const Matrix* right) {
-    Matrix *result;
-    size_t *rows_l, *cols_l, *rows_r, *cols_r;
-    double *val1, *val2, res, res1;
-    if ((check_for_exist(left) == 1) && (check_for_exist(right) == 1)) {
-        if (get_rows(left, *rows_l) == get_cols(right, *cols_r)) {
-            int k = 0;
-            for (int i = 0; i < get_rows(left, rows_l); i++) { 
-                while (k < get_cols(right, cols_r)) {
-                    res = 0;
-                    for (int j = 0; j < get_cols(left, cols_l); j++) {
-                        res = res + get_elem(left, i, j, val1) * get_elem(right, j, i+k, val2);
-                    }
+    Matrix *result = malloc(sizeof(Matrix));
+    if (!(check_for_exist(left) || check_for_exist(right))) {
+        puts("can`t multiply non-existing matrix");
+        free(result);
+        return NULL;
+    }
+    if (left->num_rows == right->num_cols) {
+        double res;
+        size_t k = 0;
+        for (size_t i = 0; i < left->num_rows; i++) { 
+            while (k < right->num_cols) {
+                res = 0;
+                for (size_t j = 0; j < left->num_cols; j++) {
+                    res = res + left->value[i][j] * right->value[j][i+k];
+                }
                 set_elem(result, i, k, res);
                 k++;
-                }
             }
         }
-        if (get_cols(left, cols_l) == get_rows(right, rows_r)) {
-            int k1 = 0;
-            for (int j = 0; get_cols(left, cols_l); j++) {
-                while (k1 < get_rows(right, rows_r)) {
-                    res1 = 0;
-                    for (int i = 0; get_rows(left, *rows_l); i++) {
-                        res1 = res1 + get_elem(left, i, j, val1) * get_elem(right, i, j+k1, val2);
-                    }
-                set_elem(result, j, k1, res1);
-                k1++;
-                }
-            }
-        }
+        return result;
     }
+    if (left->num_cols == right->num_rows) {
+        double res1;
+        size_t k1 = 0;
+        for (size_t j = 0; left->num_cols; j++) {
+            while (k1 < right->num_rows) {
+                res1 = 0;
+                for (size_t i = 0; left->num_rows; i++) {
+                    res1 = res1 + left->value[i][j] * right->value[i][j+k1];
+                }
+            set_elem(result, j, k1, res1);
+            k1++;
+            }
+        }
+        return result;
+    }
+    free_matrix(left);
+    free_matrix(right);
+    return NULL;
 }
