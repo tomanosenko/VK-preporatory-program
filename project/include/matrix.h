@@ -1,6 +1,6 @@
 
-#ifndef GITHUB_MY_HOMEWORK3_PROJECT_INCLUDE_MATRIX_H_
-#define GITHUB_MY_HOMEWORK3_PROJECT_INCLUDE_MATRIX_H_
+#ifndef PROJECT_INCLUDE_MATRIX_H_
+#define PROJECT_INCLUDE_MATRIX_H_
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -38,4 +38,4 @@ Matrix* adj(const Matrix* matrix);
 Matrix* inv(const Matrix* matrix);
 
 
-#endif  //  GITHUB_MY_HOMEWORK3_PROJECT_INCLUDE_MATRIX_H_
+#endif  //  PROJECT_INCLUDE_MATRIX_H_
