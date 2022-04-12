@@ -1,6 +1,6 @@
 
-#ifndef _MATRIX_H_
-#define _MATRIX_H_
+#ifndef GITHUB_MY_HOMEWORK3_PROJECT_INCLUDE_MATRIX_H_
+#define GITHUB_MY_HOMEWORK3_PROJECT_INCLUDE_MATRIX_H_
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -9,7 +9,7 @@
 typedef struct Matrix {
     size_t num_rows;
     size_t num_cols;
-    double** value;
+    double* value;
 } Matrix;
 
 // Init/release operations
@@ -24,7 +24,7 @@ int get_cols(const Matrix* matrix, size_t* cols);
 int get_elem(const Matrix* matrix, size_t row, size_t col, double* val);
 int set_elem(Matrix* matrix, size_t row, size_t col, double val);
 
-//Math operations
+// Math operations
 Matrix* mul_scalar(const Matrix* matrix, double val);
 Matrix* transp(const Matrix* matrix);
 
@@ -38,4 +38,4 @@ Matrix* adj(const Matrix* matrix);
 Matrix* inv(const Matrix* matrix);
 
 
-#endif //_MATRIX_H_
+#endif  //  GITHUB_MY_HOMEWORK3_PROJECT_INCLUDE_MATRIX_H_
