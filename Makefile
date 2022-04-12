@@ -35,7 +35,8 @@ TST_SRCS = \
 	       project/src/matrix_mul.c \
 	       project/src/matrix_mul_scalar.c \
 		   project/tests/src/*.c \
-		   project/src/make_matrix.c
+		   project/src/make_matrix.c \
+		    project/src/free_matrix.c
 
 .PHONY: all check build test memtest testextra memtestextra rebuild clean
 
