@@ -26,7 +26,6 @@ TST_HDRS = \
 TST_SRCS = \
            project/src/check_for_exist.c \
 	       project/src/create_matrix_from_file.c \
-	       project/src/check_for_exist.c \
 	       project/src/get_rows_cols.c \
 	       project/src/get_set_elem.c \
 	       project/src/matrix_sub.c \
