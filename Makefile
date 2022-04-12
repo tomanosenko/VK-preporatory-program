@@ -16,7 +16,9 @@ SRCS = \
 	   project/src/matrix_sum.c \
 	   project/src/matrix_mul.c \
 	   project/src/matrix_mul_scalar.c \
-	   project/src/make_matrix.c
+	   project/src/make_matrix.c \
+	   project/src/free_matrix.c
+	   
 	   
 TST_HDRS = \
            project/include \
