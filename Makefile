@@ -11,17 +11,16 @@ SRCS = \
 	   project/src/create_matrix_from_file.c \
 	   project/src/get_rows_cols.c \
 	   project/src/get_set_elem.c \
-	   project/src/matrix_sub.c \
 	   project/src/matrix_transp.c \
-	   project/src/matrix_sum.c \
+	   project/src/matrix_arifm.c \
 	   project/src/matrix_mul.c \
 	   project/src/matrix_mul_scalar.c \
 	   project/src/make_matrix.c \
 	   project/src/free_matrix.c \
 	   project/src/matrix_det.c \
-	   project/src/matrix_adj.c \
-	   project/src/matrix_inv.c
-	   
+	   project/src/matrix_inv.c \
+	   project/src/matrix_adj.c 
+
 	   
 TST_HDRS = \
            project/include \
@@ -32,17 +31,17 @@ TST_SRCS = \
 	       project/src/create_matrix_from_file.c \
 	       project/src/get_rows_cols.c \
 	       project/src/get_set_elem.c \
-	       project/src/matrix_sub.c \
 	       project/src/matrix_transp.c \
-	       project/src/matrix_sum.c \
+	       project/src/matrix_arifm.c \
 	       project/src/matrix_mul.c \
 	       project/src/matrix_mul_scalar.c \
 		   project/tests/src/*.c \
 		   project/src/make_matrix.c \
 		   project/src/free_matrix.c \
-           project/src/matrix_det.c \
-	       project/src/matrix_adj.c \
-		   project/src/matrix_inv.c
+		   project/src/matrix_det.c \
+	       project/src/matrix_inv.c \
+	       project/src/matrix_adj.c 
+
 
 .PHONY: all check build test memtest testextra memtestextra rebuild clean
 
@@ -57,7 +56,7 @@ test: $(TST_TARGET)
 	$(TST_TARGET)
 
 memtest: $(TST_TARGET)
-	./project/tests/memtest.sh ${TST_TARGET}
+	./project/tests/memtest.sh ${TST_TARGET} 
 
 testextra: $(TST_TARGET)
 	$(TST_TARGET) --with-extra

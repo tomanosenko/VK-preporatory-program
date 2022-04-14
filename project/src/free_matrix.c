@@ -8,6 +8,6 @@ void free_matrix(Matrix* matrix) {
         if (matrix -> value != NULL) {
             free(matrix -> value);
         }
-        free(matrix);
+    free(matrix);
     }
 }
