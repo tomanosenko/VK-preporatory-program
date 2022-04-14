@@ -17,7 +17,10 @@ SRCS = \
 	   project/src/matrix_mul.c \
 	   project/src/matrix_mul_scalar.c \
 	   project/src/make_matrix.c \
-	   project/src/free_matrix.c
+	   project/src/free_matrix.c \
+	   project/src/matrix_det.c \
+	   project/src/matrix_adj.c \
+	   project/src/matrix_inv.c
 	   
 	   
 TST_HDRS = \
@@ -36,7 +39,10 @@ TST_SRCS = \
 	       project/src/matrix_mul_scalar.c \
 		   project/tests/src/*.c \
 		   project/src/make_matrix.c \
-		    project/src/free_matrix.c
+		   project/src/free_matrix.c \
+           project/src/matrix_det.c \
+	       project/src/matrix_adj.c \
+		   project/src/matrix_inv.c
 
 .PHONY: all check build test memtest testextra memtestextra rebuild clean
 

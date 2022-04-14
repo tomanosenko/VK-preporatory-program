@@ -17,6 +17,7 @@ Matrix* create_matrix_from_file(const char* path_file);
 Matrix* create_matrix(size_t rows, size_t cols);
 void free_matrix(Matrix* matrix);
 int check_for_exist(const Matrix *matrix);
+Matrix* delete_i_j(const Matrix* matrix, size_t row, size_t col);
 
 // Basic operations
 int get_rows(const Matrix* matrix, size_t* rows);
