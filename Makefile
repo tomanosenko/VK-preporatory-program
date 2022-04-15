@@ -7,19 +7,12 @@ HDRS = \
 
 SRCS = \
 	   project/src/main.c \
-	   project/src/check_for_exist.c \
-	   project/src/create_matrix_from_file.c \
-	   project/src/get_rows_cols.c \
-	   project/src/get_set_elem.c \
-	   project/src/matrix_transp.c \
+	   project/src/support.c \
+	   project/src/ggetters_setters.c \
 	   project/src/matrix_arifm.c \
-	   project/src/matrix_mul.c \
-	   project/src/matrix_mul_scalar.c \
-	   project/src/make_matrix.c \
-	   project/src/free_matrix.c \
-	   project/src/matrix_det.c \
-	   project/src/matrix_inv.c \
-	   project/src/matrix_adj.c 
+	   project/src/creating.c \
+	   project/src/extra.c \
+	   project/src/matrix_inv.c 
 
 	   
 TST_HDRS = \
@@ -27,20 +20,13 @@ TST_HDRS = \
 		   project/tests/include
 
 TST_SRCS = \
-           project/src/check_for_exist.c \
-	       project/src/create_matrix_from_file.c \
-	       project/src/get_rows_cols.c \
-	       project/src/get_set_elem.c \
-	       project/src/matrix_transp.c \
+           project/src/support.c \
+	       project/src/getters_setters.c \
 	       project/src/matrix_arifm.c \
-	       project/src/matrix_mul.c \
-	       project/src/matrix_mul_scalar.c \
 		   project/tests/src/*.c \
-		   project/src/make_matrix.c \
-		   project/src/free_matrix.c \
-		   project/src/matrix_det.c \
-	       project/src/matrix_inv.c \
-	       project/src/matrix_adj.c 
+		   project/src/creating.c \
+		   project/src/extra.c \
+		   project/src/matrix_inv.c 
 
 
 .PHONY: all check build test memtest testextra memtestextra rebuild clean

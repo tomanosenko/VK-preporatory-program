@@ -1,11 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "matrix.h"
-
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+
+Matrix* create_matrix(size_t rows, size_t cols) {
+    if (!rows || !cols)
+        return NULL;
+    Matrix* new_matrix = malloc(sizeof(Matrix));
+    if (!new_matrix) {
+        fprintf(stderr, "can`t allocate memory");
+        return NULL;
+    }
+    new_matrix -> num_rows = rows;
+    new_matrix -> num_cols = cols;
+    new_matrix -> value = calloc(rows * cols, sizeof(double));
+    if (!(new_matrix -> value)) {
+        free(new_matrix);
+        fprintf(stderr, "can`t allocate memory");
+        return NULL;
+    }
+    return new_matrix;
+}
 
 #define NUMBER_MATRIX_SIZE 2
 
@@ -58,4 +73,13 @@ Matrix* create_matrix_from_file(const char* path_file) {
             fprintf(stderr, EOF_ERR);
         }
     return matrix;
+}
+
+void free_matrix(Matrix* matrix) {
+    if (matrix != NULL) {
+        if (matrix -> value != NULL) {
+            free(matrix -> value);
+        }
+    free(matrix);
+    }
 }
