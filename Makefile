@@ -8,7 +8,7 @@ HDRS = \
 SRCS = \
 	   project/src/main.c \
 	   project/src/support.c \
-	   project/src/ggetters_setters.c \
+	   project/src/getters_setters.c \
 	   project/src/matrix_arifm.c \
 	   project/src/creating.c \
 	   project/src/extra.c \
