@@ -5,15 +5,17 @@
 #include "matrix.h"
 
 Matrix* inv(const Matrix* matrix) {
-    if (!check_for_exist(matrix))
+    if (check_for_exist(matrix))
         return NULL;
-    if (matrix->num_rows != matrix->num_cols)
-        return NULL;
-    size_t n = matrix->num_rows;
-    if (n < 1) {
-        puts("uncountable det");
+    double determinant;
+    int buff = det(matrix, &determinant);
+    if ((determinant == 0 || buff)) {
+        puts("error determinant");
         return NULL;
     }
-    Matrix *invert_matr = mul_scalar(adj(matrix), 1/det(matrix, matrix->value));
+    double value = 1/determinant;
+    Matrix *adjected = adj(matrix);
+    Matrix *invert_matr = mul_scalar(adjected, value);
+    free_matrix(adjected);
     return invert_matr;
 }
