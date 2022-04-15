@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+#include "support.h"
 
 Matrix* inv(const Matrix* matrix) {
     if (check_for_exist(matrix))

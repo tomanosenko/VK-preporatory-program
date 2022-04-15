@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "matrix.h"
 #include <stdlib.h>
+#include "support.h"
 
 Matrix* transp(const Matrix* matrix) {
     if (check_for_exist(matrix)) {

@@ -1,8 +1,7 @@
 
 #include <stdio.h>
-
 #include "matrix.h"
-#include <stdio.h>
+#include "support.h"
 
 Matrix* mul_scalar(const Matrix* matrix, double val) {
     if (check_for_exist(matrix)) {

@@ -1,11 +1,8 @@
 
 #include <stdio.h>
-#include <stdio.h>
-#include "matrix.h"
-
-#include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+#include "support.h"
 
 Matrix* arifmetic(const Matrix* left, const Matrix* right, arifmetic_func fn) {
     if (check_for_exist(left) || check_for_exist(right)) {

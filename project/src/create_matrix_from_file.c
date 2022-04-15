@@ -52,6 +52,10 @@ Matrix* create_matrix_from_file(const char* path_file) {
                 }
             }
         }
-        fclose(matrix_file);
+        if (EOF) {
+            fclose(matrix_file);
+        } else {
+            fprintf(stderr, EOF_ERR);
+        }
     return matrix;
 }

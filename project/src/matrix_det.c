@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+#include "support.h"
 
 int det(const Matrix* matrix, double* val) {
     if (check_for_exist(matrix)) {
@@ -22,7 +23,7 @@ int det(const Matrix* matrix, double* val) {
         double determinant = 0;
         double minor_det;
         for (size_t i = 0; i < n; i++) {
-            Matrix* minor = delete_i_j(matrix, 0, i);
+            Matrix* minor = get_minor(matrix, 0, i);
             if ((minor != NULL) && !(det(minor, &minor_det))) {
             determinant += minor_sign * minor_det * matrix -> value[i];
             minor_sign *= -1;
@@ -34,7 +35,7 @@ int det(const Matrix* matrix, double* val) {
     return 0;
 }
 
-Matrix* delete_i_j(const Matrix* matrix, size_t row, size_t col) {
+Matrix* get_minor(const Matrix* matrix, size_t row, size_t col) {
     if (!matrix) {
     return NULL;
     }

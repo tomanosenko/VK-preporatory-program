@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include "matrix.h"
+#include "support.h"
 
 int get_rows(const Matrix* matrix, size_t* rows) {
     if (check_for_exist(matrix)) {
@@ -12,7 +13,7 @@ int get_rows(const Matrix* matrix, size_t* rows) {
 
 int get_cols(const Matrix* matrix, size_t* cols) {
     if (check_for_exist(matrix)) {
-    return -1;
+        return -1;
     }
     *cols = matrix->num_cols;
     return 0;

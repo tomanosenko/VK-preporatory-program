@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+#include "support.h"
 
 Matrix* adj(const Matrix* matrix) {
     if (check_for_exist(matrix))
@@ -22,7 +23,7 @@ Matrix* adj(const Matrix* matrix) {
     double minor_det;
     for (size_t i = 0; i < n; i++) {
         for (size_t j = 0; j < n; j++) {
-            Matrix* minor = delete_i_j(matrix, j, i);
+            Matrix* minor = get_minor(matrix, j, i);
             if ((minor != NULL) && !(det(minor, &minor_det))) {
                 int minor_sign = ((i + j) % 2)? -1: 1;
                 adject -> value[i * n + j] = minor_sign * minor_det;
