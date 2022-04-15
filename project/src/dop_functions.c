@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
-#include "dop.h"
 
 Matrix* adj(const Matrix* matrix) {
     if (check_for_exist(matrix))

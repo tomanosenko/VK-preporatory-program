@@ -1,7 +1,6 @@
 
 #include <stdio.h>
 #include "matrix.h"
-#include "getters_setters.h"
 
 int get_rows(const Matrix* matrix, size_t* rows) {
     if (check_for_exist(matrix)) {
