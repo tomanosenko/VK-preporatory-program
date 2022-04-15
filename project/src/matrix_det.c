@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+<<<<<<< HEAD:project/src/dop_functions.c
 
 Matrix* adj(const Matrix* matrix) {
     if (check_for_exist(matrix))
@@ -48,6 +49,8 @@ Matrix* inv(const Matrix* matrix) {
     free_matrix(adjected);
     return invert_matr;
 }
+=======
+>>>>>>> parent of dfe6c71... The last commit, I hope:project/src/matrix_det.c
 
 int det(const Matrix* matrix, double* val) {
     if (check_for_exist(matrix)) {
@@ -68,7 +71,7 @@ int det(const Matrix* matrix, double* val) {
         double determinant = 0;
         double minor_det;
         for (size_t i = 0; i < n; i++) {
-            Matrix* minor = get_minor(matrix, 0, i);
+            Matrix* minor = delete_i_j(matrix, 0, i);
             if ((minor != NULL) && !(det(minor, &minor_det))) {
             determinant += minor_sign * minor_det * matrix -> value[i];
             minor_sign *= -1;
@@ -80,7 +83,7 @@ int det(const Matrix* matrix, double* val) {
     return 0;
 }
 
-Matrix*get_minor(const Matrix* matrix, size_t row, size_t col) {
+Matrix* delete_i_j(const Matrix* matrix, size_t row, size_t col) {
     if (!matrix) {
     return NULL;
     }

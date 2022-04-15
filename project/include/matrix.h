@@ -7,9 +7,12 @@
 #define INPUT_ERR "Non-exising matrixes"
 #define MULTIPLY_ERR "Matrix can't be multiply"
 #define DIMENTION_ERR "Diffrent nums or sizes"
+<<<<<<< HEAD
 #define EOF_ERR "The end of the file wasn't reached"
 #define MEM_ERR "Can't allocate the memory "
 #define EXIST_ERR "The file doesn't exist"
+=======
+>>>>>>> parent of dfe6c71... The last commit, I hope
 
 typedef struct Matrix {
 size_t num_rows;

@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "matrix.h"
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "matrix.h"
+
 #define NUMBER_MATRIX_SIZE 2
 
 #define ALLOCATE_ERR "Can't allocate memory"
@@ -50,6 +55,7 @@ Matrix* create_matrix_from_file(const char* path_file) {
         fclose(matrix_file);
     return matrix;
 }
+<<<<<<< HEAD:project/src/creating_matrix.c
 
 Matrix* create_matrix(size_t rows, size_t cols) {
     if (!rows || !cols)
@@ -86,3 +92,5 @@ void free_matrix(Matrix* matrix) {
     free(matrix);
     }
 }
+=======
+>>>>>>> parent of dfe6c71... The last commit, I hope:project/src/create_matrix_from_file.c
