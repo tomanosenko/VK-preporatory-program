@@ -64,7 +64,7 @@ Matrix* create_matrix(size_t rows, size_t cols) {
     new_matrix -> value = calloc(rows * cols, sizeof(double));
     if (!(new_matrix -> value)) {
         free(new_matrix);
-        fprintf(stderr, MEM_ERR);
+        puts("The file doesn't exist");
         return NULL;
     }
     return new_matrix;
