@@ -13,5 +13,5 @@ Matrix* mul(const Matrix* left, const Matrix* right);
 Matrix* mul_scalar(const Matrix* matrix, double val);
 Matrix* transp(const Matrix* matrix);
 
-#endif  //  PROJECT_INCLUDE_GETTERS_SETTERS_H_
+#endif  //  PROJECT_INCLUDE_ARIFM_H_
 
