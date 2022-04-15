@@ -47,12 +47,7 @@ Matrix* create_matrix_from_file(const char* path_file) {
                 }
             }
         }
-        if (EOF) {
-            fclose(matrix_file);
-        } else {
-            fprintf(stderr, EOF_ERR);
-        }
-
+        fclose(matrix_file);
     return matrix;
 }
 
