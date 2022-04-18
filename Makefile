@@ -8,8 +8,8 @@ SRCS = \
 	   project/src/personal_data_write.c \
 	   project/src/transaction_write.c \
 	   project/src/update_transaction_data.c \
-	   project/src/file_opener.c \
-	   project/src/print.c 
+	   project/src/print.c \
+	   project/src/scans.c
 
 SRCS_TEST = \
        test/src/main.c \
