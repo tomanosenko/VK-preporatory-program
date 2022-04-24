@@ -3,11 +3,14 @@
 #include <vector>
 #include <istream>
 
+bool is_equal(double first_digit, double second_digit);
+
 namespace prep {
 class Matrix {
- int rows;
- int cols;
- double* value;
+ size_t rows;
+ size_t cols;
+ std::vector<double>value;
+
  public:
   explicit Matrix(size_t num_rows = 0, size_t num_cols = 0);
   explicit Matrix(std::istream& is);
@@ -39,6 +42,7 @@ class Matrix {
   double det() const;
   Matrix adj() const;
   Matrix inv() const;
+  Matrix delete_i_j(size_t num_rows, size_t num_cols) const;
 };
 
 Matrix operator*(double val, const Matrix& matrix);
