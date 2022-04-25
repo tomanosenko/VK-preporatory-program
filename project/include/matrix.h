@@ -7,9 +7,9 @@ bool is_equal(double a_compare, double b_compare);
 
 namespace prep {
 class Matrix {
- size_t rows;
- size_t cols;
- std::vector<double>value;
+size_t rows;
+size_t cols;
+std::vector<double>value;
 
  public:
   explicit Matrix(size_t num_rows = 0, size_t num_cols = 0);
@@ -48,5 +48,3 @@ class Matrix {
 Matrix operator*(double val, const Matrix& matrix);
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
 }  // namespace prep
-
-
