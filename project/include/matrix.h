@@ -3,7 +3,7 @@
 #include <vector>
 #include <istream>
 
-bool is_equal(double first_digit, double second_digit);
+bool is_equal(double a_compare, double b_compare);
 
 namespace prep {
 class Matrix {
@@ -14,8 +14,8 @@ class Matrix {
  public:
   explicit Matrix(size_t num_rows = 0, size_t num_cols = 0);
   explicit Matrix(std::istream& is);
-  Matrix(const Matrix& rhs) = default;
-  Matrix& operator=(const Matrix& rhs) = default;
+  Matrix(const Matrix& rhs);
+  Matrix& operator=(const Matrix& rhs);
   ~Matrix() = default;
 
   size_t getRows() const;
@@ -48,3 +48,5 @@ class Matrix {
 Matrix operator*(double val, const Matrix& matrix);
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
 }  // namespace prep
+
+
